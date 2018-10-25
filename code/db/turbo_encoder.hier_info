@@ -1,4 +1,5 @@
 |turbo_encoder
+clock => Selector0.IN2
 clock => encoder_module:encoder_module0.clock
 clock => counter[0].CLK
 clock => counter[1].CLK
@@ -14,10 +15,8 @@ clock => counter[10].CLK
 clock => counter[11].CLK
 clock => counter[12].CLK
 clock => encoder_module:encoder_module1.clock
-clock => shiftreg:sft0.clock
-clock => shiftreg:sft1.clock
-clock => shiftreg:sft2.clock
-clock => shiftreg:sft3.clock
+clock => curr_state~1.DATAIN
+clock => Selector0.IN0
 reset => counter.OUTPUTSELECT
 reset => counter.OUTPUTSELECT
 reset => counter.OUTPUTSELECT
@@ -31,6 +30,12 @@ reset => counter.OUTPUTSELECT
 reset => counter.OUTPUTSELECT
 reset => counter.OUTPUTSELECT
 reset => counter.OUTPUTSELECT
+reset => curr_state.OUTPUTSELECT
+reset => curr_state.OUTPUTSELECT
+reset => curr_state.OUTPUTSELECT
+reset => curr_state.OUTPUTSELECT
+reset => curr_state.OUTPUTSELECT
+reset => curr_state.OUTPUTSELECT
 reset => encoder_module:encoder_module0.reset
 reset => encoder_module:encoder_module1.reset
 reset => shiftreg:sft0.sclr
@@ -39,9 +44,9 @@ reset => shiftreg:sft2.sclr
 reset => shiftreg:sft3.sclr
 cin => c_t1.DATAB
 cin => x.DATAB
-d0 <= d0.DB_MAX_OUTPUT_PORT_TYPE
-d1 <= d1.DB_MAX_OUTPUT_PORT_TYPE
-d2 <= d2.DB_MAX_OUTPUT_PORT_TYPE
+d0 << Selector5.DB_MAX_OUTPUT_PORT_TYPE
+d1 << Selector6.DB_MAX_OUTPUT_PORT_TYPE
+d2 << Selector7.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |turbo_encoder|encoder_module:encoder_module0

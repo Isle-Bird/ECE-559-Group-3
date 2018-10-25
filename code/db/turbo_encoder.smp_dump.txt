@@ -1,0 +1,9 @@
+
+State Machine - |turbo_encoder|curr_state
+Name curr_state.term_3 curr_state.term_2 curr_state.term_1 curr_state.term_0 curr_state.idle curr_state.norm 
+curr_state.norm 0 0 0 0 0 0 
+curr_state.idle 0 0 0 0 1 1 
+curr_state.term_0 0 0 0 1 0 1 
+curr_state.term_1 0 0 1 0 0 1 
+curr_state.term_2 0 1 0 0 0 1 
+curr_state.term_3 1 0 0 0 0 1 

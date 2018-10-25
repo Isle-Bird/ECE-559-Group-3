@@ -40,6 +40,11 @@ SIGNAL d1 : STD_LOGIC;
 SIGNAL d2 : STD_LOGIC;
 SIGNAL reset : STD_LOGIC;
 
+--test signals
+--SIGNAL counter_out : STD_LOGIC;
+--SIGNAL sftRegClk : STD_LOGIC;
+--SIGNAL sftRegEn : STD_LOGIC;
+
 --shared variable simend : boolean := false;
 
 COMPONENT turbo_encoder
@@ -50,6 +55,11 @@ COMPONENT turbo_encoder
 	d1 : OUT STD_LOGIC;
 	d2 : OUT STD_LOGIC;
 	reset : IN STD_LOGIC
+
+	-- test signals
+	-- counter_out : out std_logic;
+	--sftRegClk : out std_logic;
+	--sftRegEn : out std_logic
 	);
 END COMPONENT;
 BEGIN
@@ -62,6 +72,11 @@ BEGIN
 	d1 => d1,
 	d2 => d2,
 	reset => reset
+
+	-- test signals output
+	-- counter_out => counter_out,
+	--sftRegEn => sftRegEn,
+	--sftRegClk => sftRegClk
 	);
 
 init : PROCESS                                               

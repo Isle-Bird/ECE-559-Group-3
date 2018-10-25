@@ -1,5 +1,5 @@
 Flow report for turbo_encoder
-Tue Oct 23 12:40:55 2018
+Wed Oct 24 20:33:26 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Oct 23 12:40:55 2018       ;
+; Flow Status                        ; Successful - Wed Oct 24 20:33:26 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; turbo_encoder                               ;
 ; Top-level Entity Name              ; turbo_encoder                               ;
 ; Family                             ; Cyclone IV E                                ;
 ; Device                             ; EP4CE22F17C6                                ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 47 / 22,320 ( < 1 % )                       ;
-;     Total combinational functions  ; 47 / 22,320 ( < 1 % )                       ;
-;     Dedicated logic registers      ; 25 / 22,320 ( < 1 % )                       ;
-; Total registers                    ; 25                                          ;
+; Total logic elements               ; 57 / 22,320 ( < 1 % )                       ;
+;     Total combinational functions  ; 55 / 22,320 ( < 1 % )                       ;
+;     Dedicated logic registers      ; 31 / 22,320 ( < 1 % )                       ;
+; Total registers                    ; 31                                          ;
 ; Total pins                         ; 6 / 154 ( 4 % )                             ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0 / 608,256 ( 0 % )                         ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 10/23/2018 12:40:12 ;
+; Start date & time ; 10/24/2018 20:32:50 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; turbo_encoder       ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------+
 ; Assignment Name                      ; Value                                  ; Default Value ; Entity Name ; Section Id            ;
 +--------------------------------------+----------------------------------------+---------------+-------------+-----------------------+
-; COMPILER_SIGNATURE_ID                ; 169736356209809.154031281100984        ; --            ; --          ; --                    ;
+; COMPILER_SIGNATURE_ID                ; 169736356209809.154042757014380        ; --            ; --          ; --                    ;
 ; EDA_DESIGN_INSTANCE_NAME             ; NA                                     ; --            ; --          ; turbo_encoder_vhd_tst ;
 ; EDA_NATIVELINK_SIMULATION_TEST_BENCH ; turbo_encoder_vhd_tst                  ; --            ; --          ; eda_simulation        ;
 ; EDA_OUTPUT_DATA_FORMAT               ; Vhdl                                   ; --            ; --          ; eda_simulation        ;
@@ -106,12 +106,12 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:17     ; 1.0                     ; 4812 MB             ; 00:00:34                           ;
-; Fitter                    ; 00:00:10     ; 1.0                     ; 5299 MB             ; 00:00:10                           ;
-; Assembler                 ; 00:00:02     ; 1.0                     ; 4692 MB             ; 00:00:02                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4776 MB             ; 00:00:03                           ;
-; EDA Netlist Writer        ; 00:00:02     ; 1.0                     ; 4659 MB             ; 00:00:02                           ;
-; Total                     ; 00:00:35     ; --                      ; --                  ; 00:00:51                           ;
+; Analysis & Synthesis      ; 00:00:15     ; 1.0                     ; 4814 MB             ; 00:00:29                           ;
+; Fitter                    ; 00:00:08     ; 1.0                     ; 5301 MB             ; 00:00:09                           ;
+; Assembler                 ; 00:00:01     ; 1.0                     ; 4690 MB             ; 00:00:02                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.0                     ; 4777 MB             ; 00:00:03                           ;
+; EDA Netlist Writer        ; 00:00:01     ; 1.0                     ; 4657 MB             ; 00:00:02                           ;
+; Total                     ; 00:00:29     ; --                      ; --                  ; 00:00:45                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

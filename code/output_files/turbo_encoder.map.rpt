@@ -1,5 +1,5 @@
 Analysis & Synthesis report for turbo_encoder
-Tue Oct 23 12:40:29 2018
+Wed Oct 24 20:33:05 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -14,20 +14,22 @@ Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. Analysis & Synthesis IP Cores Summary
-  9. Registers Removed During Synthesis
- 10. General Register Statistics
- 11. Multiplexer Restructuring Statistics (Restructuring Performed)
- 12. Parameter Settings for User Entity Instance: encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
- 13. Parameter Settings for User Entity Instance: encoder_module:encoder_module1|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
- 14. Parameter Settings for User Entity Instance: shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
- 15. Parameter Settings for User Entity Instance: shiftreg:sft1|lpm_shiftreg:LPM_SHIFTREG_component
- 16. Parameter Settings for User Entity Instance: shiftreg:sft2|lpm_shiftreg:LPM_SHIFTREG_component
- 17. Parameter Settings for User Entity Instance: shiftreg:sft3|lpm_shiftreg:LPM_SHIFTREG_component
- 18. lpm_shiftreg Parameter Settings by Entity Instance
- 19. Port Connectivity Checks: "encoder_module:encoder_module0|shiftreg:sft0"
- 20. Post-Synthesis Netlist Statistics for Top Partition
- 21. Elapsed Time Per Partition
- 22. Analysis & Synthesis Messages
+  9. State Machine - |turbo_encoder|curr_state
+ 10. User-Specified and Inferred Latches
+ 11. Registers Removed During Synthesis
+ 12. General Register Statistics
+ 13. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 14. Parameter Settings for User Entity Instance: encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
+ 15. Parameter Settings for User Entity Instance: encoder_module:encoder_module1|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
+ 16. Parameter Settings for User Entity Instance: shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component
+ 17. Parameter Settings for User Entity Instance: shiftreg:sft1|lpm_shiftreg:LPM_SHIFTREG_component
+ 18. Parameter Settings for User Entity Instance: shiftreg:sft2|lpm_shiftreg:LPM_SHIFTREG_component
+ 19. Parameter Settings for User Entity Instance: shiftreg:sft3|lpm_shiftreg:LPM_SHIFTREG_component
+ 20. lpm_shiftreg Parameter Settings by Entity Instance
+ 21. Port Connectivity Checks: "encoder_module:encoder_module0|shiftreg:sft0"
+ 22. Post-Synthesis Netlist Statistics for Top Partition
+ 23. Elapsed Time Per Partition
+ 24. Analysis & Synthesis Messages
 
 
 
@@ -53,15 +55,15 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Oct 23 12:40:29 2018       ;
+; Analysis & Synthesis Status        ; Successful - Wed Oct 24 20:33:05 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; turbo_encoder                               ;
 ; Top-level Entity Name              ; turbo_encoder                               ;
 ; Family                             ; Cyclone IV E                                ;
-; Total logic elements               ; 47                                          ;
-;     Total combinational functions  ; 47                                          ;
-;     Dedicated logic registers      ; 25                                          ;
-; Total registers                    ; 25                                          ;
+; Total logic elements               ; 55                                          ;
+;     Total combinational functions  ; 55                                          ;
+;     Dedicated logic registers      ; 31                                          ;
+; Total registers                    ; 31                                          ;
 ; Total pins                         ; 6                                           ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 0                                           ;
@@ -193,20 +195,20 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+-------------+
 ; Resource                                    ; Usage       ;
 +---------------------------------------------+-------------+
-; Estimated Total logic elements              ; 47          ;
+; Estimated Total logic elements              ; 55          ;
 ;                                             ;             ;
-; Total combinational functions               ; 47          ;
+; Total combinational functions               ; 55          ;
 ; Logic element usage by number of LUT inputs ;             ;
-;     -- 4 input functions                    ; 18          ;
-;     -- 3 input functions                    ; 5           ;
-;     -- <=2 input functions                  ; 24          ;
+;     -- 4 input functions                    ; 17          ;
+;     -- 3 input functions                    ; 9           ;
+;     -- <=2 input functions                  ; 29          ;
 ;                                             ;             ;
 ; Logic elements by mode                      ;             ;
-;     -- normal mode                          ; 35          ;
+;     -- normal mode                          ; 43          ;
 ;     -- arithmetic mode                      ; 12          ;
 ;                                             ;             ;
-; Total registers                             ; 25          ;
-;     -- Dedicated logic registers            ; 25          ;
+; Total registers                             ; 31          ;
+;     -- Dedicated logic registers            ; 31          ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
 ; I/O pins                                    ; 6           ;
@@ -214,9 +216,9 @@ refer to the applicable agreement for further details.
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; clock~input ;
-; Maximum fan-out                             ; 25          ;
-; Total fan-out                               ; 206         ;
-; Average fan-out                             ; 2.45        ;
+; Maximum fan-out                             ; 23          ;
+; Total fan-out                               ; 246         ;
+; Average fan-out                             ; 2.51        ;
 +---------------------------------------------+-------------+
 
 
@@ -225,10 +227,10 @@ refer to the applicable agreement for further details.
 +------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+----------------+--------------+
 ; Compilation Hierarchy Node                     ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                             ; Entity Name    ; Library Name ;
 +------------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+-------------------------------------------------------------------------------------------------+----------------+--------------+
-; |turbo_encoder                                 ; 47 (33)             ; 25 (13)                   ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |turbo_encoder                                                                                  ; turbo_encoder  ; work         ;
-;    |encoder_module:encoder_module0|            ; 5 (2)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|encoder_module:encoder_module0                                                   ; encoder_module ; work         ;
-;       |shiftreg:sft0|                          ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|encoder_module:encoder_module0|shiftreg:sft0                                     ; shiftreg       ; work         ;
-;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component ; lpm_shiftreg   ; work         ;
+; |turbo_encoder                                 ; 55 (42)             ; 31 (19)                   ; 0           ; 0            ; 0       ; 0         ; 6    ; 0            ; |turbo_encoder                                                                                  ; turbo_encoder  ; work         ;
+;    |encoder_module:encoder_module0|            ; 4 (2)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|encoder_module:encoder_module0                                                   ; encoder_module ; work         ;
+;       |shiftreg:sft0|                          ; 2 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|encoder_module:encoder_module0|shiftreg:sft0                                     ; shiftreg       ; work         ;
+;          |lpm_shiftreg:LPM_SHIFTREG_component| ; 2 (2)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component ; lpm_shiftreg   ; work         ;
 ;    |shiftreg:sft0|                             ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|shiftreg:sft0                                                                    ; shiftreg       ; work         ;
 ;       |lpm_shiftreg:LPM_SHIFTREG_component|    ; 3 (3)               ; 3 (3)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component                                ; lpm_shiftreg   ; work         ;
 ;    |shiftreg:sft1|                             ; 3 (0)               ; 3 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |turbo_encoder|shiftreg:sft1                                                                    ; shiftreg       ; work         ;
@@ -253,16 +255,42 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------+--------------+---------+--------------+--------------+-------------------------------------------------------------+-----------------+
 
 
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |turbo_encoder|curr_state                                                                                             ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-----------------+-----------------+
+; Name              ; curr_state.term_3 ; curr_state.term_2 ; curr_state.term_1 ; curr_state.term_0 ; curr_state.idle ; curr_state.norm ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-----------------+-----------------+
+; curr_state.norm   ; 0                 ; 0                 ; 0                 ; 0                 ; 0               ; 0               ;
+; curr_state.idle   ; 0                 ; 0                 ; 0                 ; 0                 ; 1               ; 1               ;
+; curr_state.term_0 ; 0                 ; 0                 ; 0                 ; 1                 ; 0               ; 1               ;
+; curr_state.term_1 ; 0                 ; 0                 ; 1                 ; 0                 ; 0               ; 1               ;
+; curr_state.term_2 ; 0                 ; 1                 ; 0                 ; 0                 ; 0               ; 1               ;
+; curr_state.term_3 ; 1                 ; 0                 ; 0                 ; 0                 ; 0               ; 1               ;
++-------------------+-------------------+-------------------+-------------------+-------------------+-----------------+-----------------+
+
+
++---------------------------------------------------------------------------------------------------+
+; User-Specified and Inferred Latches                                                               ;
++----------------------------------------------------+---------------------+------------------------+
+; Latch Name                                         ; Latch Enable Signal ; Free of Timing Hazards ;
++----------------------------------------------------+---------------------+------------------------+
+; wr_en                                              ; curr_state.norm     ; yes                    ;
+; Number of user-specified and inferred latches = 1  ;                     ;                        ;
++----------------------------------------------------+---------------------+------------------------+
+Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
+
+
 +-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Registers Removed During Synthesis                                                                                                                                                              ;
 +------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 ; Register name                                                                            ; Reason for Removal                                                                                   ;
 +------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
 ; shiftreg:sft2|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1]                                ; Merged with shiftreg:sft1|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1]                                ;
-; shiftreg:sft2|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]                                ; Merged with shiftreg:sft1|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]                                ;
 ; encoder_module:encoder_module1|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1] ; Merged with encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[1] ;
 ; encoder_module:encoder_module1|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0] ; Merged with encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0] ;
 ; encoder_module:encoder_module1|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[2] ; Merged with encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component|dffs[2] ;
+; shiftreg:sft2|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]                                ; Merged with shiftreg:sft1|lpm_shiftreg:LPM_SHIFTREG_component|dffs[0]                                ;
 ; shiftreg:sft2|lpm_shiftreg:LPM_SHIFTREG_component|dffs[2]                                ; Merged with shiftreg:sft1|lpm_shiftreg:LPM_SHIFTREG_component|dffs[2]                                ;
 ; Total Number of Removed Registers = 6                                                    ;                                                                                                      ;
 +------------------------------------------------------------------------------------------+------------------------------------------------------------------------------------------------------+
@@ -273,12 +301,12 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 25    ;
-; Number of registers using Synchronous Clear  ; 13    ;
+; Total registers                              ; 31    ;
+; Number of registers using Synchronous Clear  ; 15    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 0     ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Clock Enable       ; 9     ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -288,8 +316,8 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
-; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |turbo_encoder|counter[8]  ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |turbo_encoder|d0          ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 13 LEs               ; 13 LEs                 ; Yes        ; |turbo_encoder|counter[12] ;
+; 6:1                ; 2 bits    ; 8 LEs         ; 6 LEs                ; 2 LEs                  ; No         ; |turbo_encoder|Selector5   ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------+
 
 
@@ -443,20 +471,21 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 6                           ;
-; cycloneiii_ff         ; 25                          ;
-;     SCLR              ; 13                          ;
-;     plain             ; 12                          ;
-; cycloneiii_lcell_comb ; 47                          ;
+; cycloneiii_ff         ; 31                          ;
+;     ENA               ; 9                           ;
+;     SCLR              ; 15                          ;
+;     plain             ; 7                           ;
+; cycloneiii_lcell_comb ; 55                          ;
 ;     arith             ; 12                          ;
 ;         2 data inputs ; 12                          ;
-;     normal            ; 35                          ;
+;     normal            ; 43                          ;
 ;         1 data inputs ; 1                           ;
-;         2 data inputs ; 11                          ;
-;         3 data inputs ; 5                           ;
-;         4 data inputs ; 18                          ;
+;         2 data inputs ; 16                          ;
+;         3 data inputs ; 9                           ;
+;         4 data inputs ; 17                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 6.00                        ;
-; Average LUT depth     ; 3.37                        ;
+; Max LUT depth         ; 5.00                        ;
+; Average LUT depth     ; 2.66                        ;
 +-----------------------+-----------------------------+
 
 
@@ -465,7 +494,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:01     ;
+; Top            ; 00:00:00     ;
 +----------------+--------------+
 
 
@@ -475,7 +504,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Tue Oct 23 12:40:11 2018
+    Info: Processing started: Wed Oct 24 20:32:49 2018
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off turbo_encoder -c turbo_encoder
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
@@ -491,14 +520,11 @@ Info (12021): Found 2 design units, including 1 entities, in source file shiftre
 Info (12127): Elaborating entity "turbo_encoder" for the top level hierarchy
 Warning (10540): VHDL Signal Declaration warning at turbo_encoder.vhd(42): used explicit default value for signal "K" because signal was never assigned a value File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 42
 Warning (10036): Verilog HDL or VHDL warning at turbo_encoder.vhd(59): object "rd_en" assigned a value but never read File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 59
-Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(85): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 85
-Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(91): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 91
-Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(101): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 101
-Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(114): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 114
-Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(118): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 118
-Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(122): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 122
-Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(126): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 126
-Info (12128): Elaborating entity "encoder_module" for hierarchy "encoder_module:encoder_module0" File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 137
+Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(121): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 121
+Warning (10492): VHDL Process Statement warning at turbo_encoder.vhd(127): signal "K" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 127
+Warning (10631): VHDL Process Statement warning at turbo_encoder.vhd(143): inferring latch(es) for signal or variable "wr_en", which holds its previous value in one or more paths through the process File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 143
+Info (10041): Inferred latch for "wr_en" at turbo_encoder.vhd(143) File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 143
+Info (12128): Elaborating entity "encoder_module" for hierarchy "encoder_module:encoder_module0" File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 213
 Info (12128): Elaborating entity "shiftreg" for hierarchy "encoder_module:encoder_module0|shiftreg:sft0" File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/encoder_module.vhd Line: 40
 Info (12128): Elaborating entity "lpm_shiftreg" for hierarchy "encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component" File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/shiftreg.vhd Line: 78
 Info (12130): Elaborated megafunction instantiation "encoder_module:encoder_module0|shiftreg:sft0|lpm_shiftreg:LPM_SHIFTREG_component" File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/shiftreg.vhd Line: 78
@@ -506,17 +532,19 @@ Info (12133): Instantiated megafunction "encoder_module:encoder_module0|shiftreg
     Info (12134): Parameter "lpm_direction" = "RIGHT"
     Info (12134): Parameter "lpm_type" = "LPM_SHIFTREG"
     Info (12134): Parameter "lpm_width" = "3"
+Warning (19016): Clock multiplexers are found and protected
+    Warning (19017): Found clock multiplexer Selector0~0 File: E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd Line: 78
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 53 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 61 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 3 input pins
     Info (21059): Implemented 3 output pins
-    Info (21061): Implemented 47 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 10 warnings
-    Info: Peak virtual memory: 4812 megabytes
-    Info: Processing ended: Tue Oct 23 12:40:29 2018
-    Info: Elapsed time: 00:00:18
-    Info: Total CPU time (on all processors): 00:00:35
+    Info (21061): Implemented 55 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 8 warnings
+    Info: Peak virtual memory: 4814 megabytes
+    Info: Processing ended: Wed Oct 24 20:33:05 2018
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:29
 
 
