@@ -1,5 +1,5 @@
 Fitter report for turbo_encoder
-Wed Oct 24 20:33:14 2018
+Thu Oct 25 11:54:40 2018
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------------------------------------+
 ; Fitter Summary                                                                   ;
 +------------------------------------+---------------------------------------------+
-; Fitter Status                      ; Successful - Wed Oct 24 20:33:14 2018       ;
+; Fitter Status                      ; Successful - Thu Oct 25 11:54:40 2018       ;
 ; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                      ; turbo_encoder                               ;
 ; Top-level Entity Name              ; turbo_encoder                               ;
@@ -1120,12 +1120,12 @@ Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
-Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:00
+Info (11218): Fitter post-fit operations ending: elapsed time is 00:00:01
 Info (144001): Generated suppressed messages file E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/output_files/turbo_encoder.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 5301 megabytes
-    Info: Processing ended: Wed Oct 24 20:33:15 2018
-    Info: Elapsed time: 00:00:09
+    Info: Peak virtual memory: 5302 megabytes
+    Info: Processing ended: Thu Oct 25 11:54:42 2018
+    Info: Elapsed time: 00:00:10
     Info: Total CPU time (on all processors): 00:00:10
 
 

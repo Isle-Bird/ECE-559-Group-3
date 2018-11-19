@@ -12,18 +12,18 @@
 # 
 # vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/encoder_module.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:33:44 on Oct 24,2018
+# Start time: 11:56:15 on Oct 25,2018
 # vcom -reportprogress 300 -93 -work work E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/encoder_module.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity encoder_module
 # -- Compiling architecture arc of encoder_module
-# End time: 20:33:44 on Oct 24,2018, Elapsed time: 0:00:00
+# End time: 11:56:15 on Oct 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:33:44 on Oct 24,2018
+# Start time: 11:56:15 on Oct 25,2018
 # vcom -reportprogress 300 -93 -work work E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/turbo_encoder.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -31,23 +31,23 @@
 # -- Loading package std_logic_arith
 # -- Compiling entity turbo_encoder
 # -- Compiling architecture arc of turbo_encoder
-# End time: 20:33:44 on Oct 24,2018, Elapsed time: 0:00:00
+# End time: 11:56:15 on Oct 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/shiftreg.vhd}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:33:44 on Oct 24,2018
+# Start time: 11:56:15 on Oct 25,2018
 # vcom -reportprogress 300 -93 -work work E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/shiftreg.vhd 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
 # -- Loading package std_logic_1164
 # -- Compiling entity shiftreg
 # -- Compiling architecture SYN of shiftreg
-# End time: 20:33:44 on Oct 24,2018, Elapsed time: 0:00:00
+# End time: 11:56:16 on Oct 25,2018, Elapsed time: 0:00:01
 # Errors: 0, Warnings: 0
 # 
 # vcom -93 -work work {E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/simulation/modelsim/turbo_encoder.vht}
 # Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
-# Start time: 20:33:44 on Oct 24,2018
+# Start time: 11:56:16 on Oct 25,2018
 # vcom -reportprogress 300 -93 -work work E:/Git/GitHub-Documents/ECE-559/ECE-559-Group-3/code/simulation/modelsim/turbo_encoder.vht 
 # -- Loading package STANDARD
 # -- Loading package TEXTIO
@@ -55,12 +55,12 @@
 # -- Loading package std_logic_arith
 # -- Compiling entity turbo_encoder_vhd_tst
 # -- Compiling architecture turbo_encoder_arch of turbo_encoder_vhd_tst
-# End time: 20:33:45 on Oct 24,2018, Elapsed time: 0:00:01
+# End time: 11:56:16 on Oct 25,2018, Elapsed time: 0:00:00
 # Errors: 0, Warnings: 0
 # 
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs="+acc"  turbo_encoder_vhd_tst
 # vsim -t 1ps -L altera -L lpm -L sgate -L altera_mf -L altera_lnsim -L cycloneive -L rtl_work -L work -voptargs=""+acc"" turbo_encoder_vhd_tst 
-# Start time: 20:33:45 on Oct 24,2018
+# Start time: 11:56:16 on Oct 25,2018
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -81,5 +81,5 @@
 # run -all
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ps  Iteration: 0  Instance: /turbo_encoder_vhd_tst/i1
-# End time: 20:36:12 on Oct 24,2018, Elapsed time: 0:02:27
+# End time: 16:04:35 on Oct 25,2018, Elapsed time: 4:08:19
 # Errors: 0, Warnings: 1

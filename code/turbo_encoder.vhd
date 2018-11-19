@@ -1,4 +1,3 @@
-
 library ieee;
 use ieee.std_logic_1164.all;
 use ieee.std_logic_arith.all;
@@ -155,7 +154,7 @@ begin
 end process;
 
 -- switch control -----
-process (curr_state, cin, cin_p, f0, f1, c_t0) 
+process (curr_state) 
 begin
 	cin_p <= cin;  -- testing
 	case curr_state is
@@ -171,7 +170,7 @@ begin
 end process;
 
 -- output control ----
-process (curr_state, x, z, z_p, q_0, q_1, q_2, q_3) 
+process (curr_state) 
 begin
 	case curr_state is
 		when term_0 =>

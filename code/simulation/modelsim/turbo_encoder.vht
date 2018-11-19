@@ -55,59 +55,40 @@ COMPONENT turbo_encoder
 	d1 : OUT STD_LOGIC;
 	d2 : OUT STD_LOGIC;
 	reset : IN STD_LOGIC
-
-	-- test signals
-	-- counter_out : out std_logic;
-	--sftRegClk : out std_logic;
-	--sftRegEn : out std_logic
 	);
 END COMPONENT;
+
 BEGIN
 	i1 : turbo_encoder
 	PORT MAP (
--- list connections between master ports and signals
 	cin => cin,
 	clock => clock,
 	d0 => d0,
 	d1 => d1,
 	d2 => d2,
 	reset => reset
-
-	-- test signals output
-	-- counter_out => counter_out,
-	--sftRegEn => sftRegEn,
-	--sftRegClk => sftRegClk
 	);
 
 init : PROCESS                                               
 -- variable declarations                                     
 BEGIN                                                        
-        -- code that executes only once
+    -- code that executes only once
     reset <= '1';
     cin <= '0';
     wait for 50 ns;
     reset <= '0';
-    cin <= '0';
-    wait for 50 ns;
+    wait for 25 ns;
     cin <= '1';
-    wait for 50 ns;
+    wait for 100 ns;
     cin <= '1';
-    --simend := true;
 WAIT;                                                       
 END PROCESS init;
 
-always : PROCESS                                              
--- optional sensitivity list                                  
--- (        )                                                 
--- variable declarations 
-BEGIN                                                         
-	--if simend = false then        -- code executes for every event on sensitivity list
-		clock <= '0';
-		wait for 25 ns;
-		clock <= '1';
-		wait for 25 ns;
-	--else	  	  
-		--WAIT;
-	--end if;                                                        
+always : PROCESS
+BEGIN
+	clock <= '0';
+	wait for 25 ns;
+	clock <= '1';
+	wait for 25 ns;                                                     
 END PROCESS always;                                          
 END turbo_encoder_arch;
